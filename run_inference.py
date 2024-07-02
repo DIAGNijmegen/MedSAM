@@ -168,7 +168,7 @@ def run_inference(input_path: str, csv_path: str,  output_path: str, model_path:
     """
     csv_file = pd.read_csv(csv_path, usecols=COLUMNS, sep=";")
     for csv_row in csv_file.iterrows():
-        file_path = Path(input_path) / str(csv_row[1]["SeriesInstanceUID"]) / str("image.mha")
+        file_path = Path(input_path) / str(csv_row[1]["SeriesInstanceUID"] + ".mha")
         processed_slices = []
         logger.info(f"Processing: {file_path}.")
         scan_name = str(file_path.parent).split("/")[-1]
