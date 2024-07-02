@@ -71,7 +71,7 @@ def medsam_inference(medsam_model, img_embed, box_1024, H, W):
     medsam_seg = (low_res_pred > 0.5).astype(np.uint8)
     return medsam_seg
 
-
+'''
 # %% load model and image
 parser = argparse.ArgumentParser(
     description="run inference on testing set based on MedSAM"
@@ -152,3 +152,4 @@ show_mask(medsam_seg, ax[1])
 show_box(box_np[0], ax[1])
 ax[1].set_title("MedSAM Segmentation")
 plt.show()
+'''
